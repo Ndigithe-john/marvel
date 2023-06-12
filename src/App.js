@@ -7,7 +7,10 @@ import Creators from "./Components/Nav/Creators";
 import Events from "./Components/Nav/Events";
 import Series from "./Components/Nav/Series";
 import Stories from "./Components/Nav/Stories";
+import Comics from "./Components/Nav/Comics";
 import Characters from "./Components/Nav/Characters";
+import CharacterDetails from "./Components/Nav/CharacterDetails";
+import EventDetails from "./Components/Nav/EventsDetails";
 function App() {
   const router = createBrowserRouter([
     {
@@ -19,23 +22,35 @@ function App() {
       element: <Home />,
       children: [
         {
-          path: "/Home/characters",
+          path: "characters",
           element: <Characters />,
         },
         {
-          path: "/Home/creators",
+          path: "characters/:id",
+          element: <CharacterDetails />,
+        },
+        {
+          path: "comics",
+          element: <Comics />,
+        },
+        {
+          path: "creators",
           element: <Creators />,
         },
         {
-          path: "/Home/events",
+          path: "events",
           element: <Events />,
         },
         {
-          path: "/Home/stories",
+          path: "events/:id",
+          element: <EventDetails />,
+        },
+        {
+          path: "stories",
           element: <Stories />,
         },
         {
-          path: "/Home/series",
+          path: "series",
           element: <Series />,
         },
       ],
